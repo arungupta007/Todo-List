@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Local Storage
+	</title>
+
+</head>
+
+<body>
+	<h1>Local Storage</h1>
+	<script>
+		// window.localStorage.setItem("UserName","Arun Gupta");
+		// window.localStorage.setItem("Mobile","7055024939");
+		// console.log(localStorage);
+		////////////////////////////////JsObject to JSON/////////
+		// var myObj = {name: "John", age: 31, city: "New York"};
+		// console.log("--------before stringify>>>>>>>>>>>",myObj);
+		// var myJSON = JSON.stringify(myObj);
+		// console.log("---------After Json>>>>>>>>>>>>>",myJSON);
+//////////////////////////////////////////////JSON to JSobject//////////////////////
+			// var myJSON = '{"name":"John", "age":31, "city":"New York"}';
+			// console.log("-------beforeParse>>>>>>>>>>",myJSON);
+			// var myObj = JSON.parse(myJSON);
+			// console.log("--------after parse>>>>>>>",myObj);
+///////////////////////////////////////////////////////////////////////////////////
+					// var arr = [ "John", "Peter", "Sally", "Jane" ];
+					// console.log("----------before stringifi",arr);
+					// var myJSON = JSON.stringify(arr);
+					// console.log("-----------array to stringifi",myJSON);
+//////////////////////////////////////////////////////////////////////////////////
+    // let x = function(){
+	// 	console.log("i am called from inside a function");
+	// };
+	// let y = function(callback){
+	// 	console.log("Do Some thing");
+	// 	callback();
+	// }
+	// y(x);
+/////////////////////////////////////////////////////////////////////////////////
+// let calc = function(a,b,calctype){
+
+// if(calctype==="add"){
+//     return a+b;
+// }
+// else if(calctype==="multiply"){
+//     return a*b;
+// };
+// }
+// console.log("----->>>",calc(2,4,'add'));
+//
+
+// let add = function(a,b){
+// 	return a+b;
+// };
+// let mul = function(a,b){
+// 	return a*b;
+// };
+// let calc  = function(a,b,callback){
+// 	return callback(a,b);
+// };
+// console.log("--->>>>>",calc(2,3,add));
+///////////////////////////////////
+let promiseToCleanTheRoom = function(){
+	return new Promise(function(resolve,reject){
+		resolve("The Room is clean");
+	});
+};
+
+let promiseToCleanTheGarbage = function(){
+	return new Promise(function(resolve,reject){
+		resolve("You have clean The Garbage");
+	});
+};
+
+let youWinTheIcecream = function(){
+	return new Promise(function(resolve,reject){
+		resolve("You have Win the icecream");
+	});
+};
+promiseToCleanTheRoom().then(function(){
+	// console.log(message + "Our Promise is resolved");
+	return promiseToCleanTheGarbage;
+}).then(function(){
+	return youWinTheIcecream;
+}).then(function(){
+	console.log("All task is complete");
+});
+
+Promise.all([promiseToCleanTheRoom(),promiseToCleanTheGarbage(),youWinTheIcecream().then(function(){
+	console.log("All is complete");
+})])
+
+
+	</script>
+</body>
+
+</html>
